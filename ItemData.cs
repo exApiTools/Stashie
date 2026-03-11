@@ -70,7 +70,7 @@ namespace Stashie
 
             // Component Declarations
             var item = inventoryItem.Item;
-            item.TryGetComponent<Map>(out var mapComp);
+            item.TryGetComponent<MapKey>(out var mapComp);
             item.TryGetComponent<Base>(out var baseComp);
             item.TryGetComponent<Mods>(out var modsComp);
             item.TryGetComponent<Sockets>(out var socketsComp);

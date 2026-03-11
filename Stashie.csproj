@@ -12,7 +12,7 @@
     <DebugType>embedded</DebugType>
     <PathMap>$(MSBuildProjectDirectory)=$(MSBuildProjectName)</PathMap>
     <EmbedAllSources>true</EmbedAllSources>
-    <OutputPath>..\..\..\..\..\PoeHelper\Plugins\Compiled\Stashie\</OutputPath>
+    <OutputPath Condition="'$(ExApiPluginOutputPath)' != ''">$(ExApiPluginOutputPath)$(MSBuildProjectName)</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +23,8 @@
 
   <ItemGroup>
     <Reference Include="ExileCore">
-      <HintPath>..\..\..\..\..\PoeHelper\ExileCore.dll</HintPath>
+      <HintPath>$(exapiPackage)\ExileCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
 </Project>
